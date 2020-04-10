@@ -1,0 +1,14 @@
+FROM wdio-base
+
+COPY package.json package-lock.json ./
+
+RUN npm ci \
+  && rm -rf \
+    /tmp/* \
+    /home/wdio/.npm
+
+COPY wdio-base.conf.js ./
+
+ENV NODE_PATH=/home/wdio/node_modules
+ENV PATH=$PATH:/home/wdio/node_modules/.bin
+ENV HEADLESS=1
