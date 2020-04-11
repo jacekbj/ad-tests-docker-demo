@@ -1,11 +1,8 @@
-This project is heavily inspired by https://github.com/blueimp work.
+The aim of this repository is to showcase problem with devtools automation protocol.
 
-The aim of this repository is to get a working example of WDIO in Docker with devtools support.
-
-Build images:
+Local setup requires Selenium:
 ```shell script
-docker build -f Dockerfile-base -t wdio-base .
-docker build -f Dockerfile-tests -t wdio-tests .
+./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start
 ```
 
 Copy test files to test parallel execution:
@@ -18,11 +15,6 @@ find . -name "*.bak" -delete
 
 Run tests:
 ```shell script
-docker-compose run --rm wdio wdio
-```
-
-Versions of software:
-```shell script
-docker-compose run --rm wdio google-chrome --version
-docker-compose run --rm wdio /usr/local/bin/chromedriver --version
+npm run wdio -- wdio-webdriver.conf.js
+npm run wdio -- wdio-devtools.conf.js
 ```
