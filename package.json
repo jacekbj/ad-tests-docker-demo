@@ -22,7 +22,6 @@
 		"chromedriver": "^80.0.2",
 		"devtools": "^6.0.14",
 		"selenium-standalone": "^6.17.0",
-		"wdio-chromedriver-service": "^6.0.1",
 		"webdriver": "^6.0.14",
 		"webdriverio": "^6.0.14"
 	}
